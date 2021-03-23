@@ -1,0 +1,40 @@
+{
+	"name": "jiripudil/naja-slow-start",
+	"description": "Naja slow start demo repository",
+	"type": "project",
+	"license": "proprietary",
+	"authors": [
+		{
+			"name": "Jiří Pudil",
+			"email": "me@jiripudil.cz"
+		}
+	],
+	"require": {
+		"php": "^8.0",
+		"latte/latte": "^2.10",
+		"nette/application": "^3.1",
+		"nette/bootstrap": "^3.1",
+		"nette/di": "^3.0",
+		"nette/forms": "^3.1",
+		"nette/http": "^3.1",
+		"nette/utils": "^3.2",
+		"tracy/tracy": "^2.8"
+	},
+	"require-dev": {
+		"roave/security-advisories": "dev-master"
+	},
+	"autoload": {
+		"psr-4": {
+			"NajaSlowStart\\": "src/"
+		}
+	},
+	"scripts": {
+		"serve": [
+			"Composer\\Config::disableProcessTimeout",
+			"@php -S [::1]:${NAJA_SLOW_START_PORT:-8000} -t public/"
+		]
+	},
+	"config": {
+		"sort-packages": true
+	}
+}

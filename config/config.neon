@@ -1,0 +1,7 @@
+application:
+	mapping:
+		*: NajaSlowStart\*Module\*Presenter
+
+services:
+	- NajaSlowStart\Application\Routing\RouterFactory
+	routing.router: @NajaSlowStart\Application\Routing\RouterFactory::create
