@@ -1,6 +1,16 @@
+extensions:
+	webpack: Contributte\Webpack\DI\WebpackExtension(%debugMode%, %consoleMode%)
+
 application:
 	mapping:
 		*: NajaSlowStart\*Module\*Presenter
+
+webpack:
+	build:
+		directory: %wwwDir%/assets
+		publicPath: /
+	devServer:
+		url: http://localhost:3000
 
 services:
 	- NajaSlowStart\Application\Routing\RouterFactory

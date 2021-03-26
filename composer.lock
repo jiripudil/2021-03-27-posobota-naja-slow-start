@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3e6b7d1dab72b3b3383f7d301ca98c07",
+    "content-hash": "864602c23935588634e3c8b18dec1e2f",
     "packages": [
         {
             "name": "brick/math",
@@ -118,6 +118,73 @@
                 }
             ],
             "time": "2021-02-10T14:14:29+00:00"
+        },
+        {
+            "name": "contributte/webpack",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/contributte/webpack.git",
+                "reference": "7ec9c4b8c167912eeabd0c862abb1b635bdeade8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/contributte/webpack/zipball/7ec9c4b8c167912eeabd0c862abb1b635bdeade8",
+                "reference": "7ec9c4b8c167912eeabd0c862abb1b635bdeade8",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "nette/di": "^3.0",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "latte/latte": "^2.4",
+                "nette/application": "^3.0",
+                "nette/bootstrap": "^3.0",
+                "nette/tester": "^2.0",
+                "phpstan/phpstan": "^0.12",
+                "symplify/easy-coding-standard": "^8.3",
+                "tracy/tracy": "^2.4"
+            },
+            "suggest": {
+                "latte/latte": "to enable Latte integration via {webpack} macro",
+                "tracy/tracy": "to enable asset debugging in the debug bar panel"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Contributte\\Webpack\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jiří Pudil",
+                    "email": "me@jiripudil.cz",
+                    "homepage": "https://jiripudil.cz"
+                }
+            ],
+            "description": "Webpack integration for Nette Framework.",
+            "homepage": "https://github.com/contributte/webpack",
+            "keywords": [
+                "nette",
+                "webpack"
+            ],
+            "support": {
+                "email": "me@jiripudil.cz",
+                "issues": "https://github.com/contributte/webpack/issues",
+                "source": "https://github.com/contributte/webpack/tree/2.0.1"
+            },
+            "time": "2021-01-30T22:18:07+00:00"
         },
         {
             "name": "latte/latte",
