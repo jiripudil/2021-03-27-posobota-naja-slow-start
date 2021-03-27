@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>{include title} - Acme Corporation</title>
+	<title n:snippet="title">{include title} - Acme Corporation</title>
 	<link rel="stylesheet" href="{webpack main.css}">
 </head>
 <body>
@@ -19,7 +19,7 @@
 			{control basketWidget}
 		</header>
 
-		<main class="mainContent">
+		<main class="mainContent" n:snippet="content">
 			{include content}
 		</main>
 	</div>
