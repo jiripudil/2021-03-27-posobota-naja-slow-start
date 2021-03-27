@@ -10,6 +10,7 @@ final class Product
 {
 	public function __construct(
 		private int $id,
+		private Category $category,
 		private string $name,
 		private string $description,
 		private string $imageUrl,
@@ -19,6 +20,11 @@ final class Product
 	public function getId(): int
 	{
 		return $this->id;
+	}
+
+	public function getCategory(): Category
+	{
+		return $this->category;
 	}
 
 	public function getName(): string
