@@ -3,7 +3,7 @@ extensions:
 
 application:
 	mapping:
-		*: NajaSlowStart\*Module\*Presenter
+		*: NajaSlowStart\Application\UI\*Module\Presenters\*Presenter
 
 webpack:
 	build:
@@ -15,3 +15,16 @@ webpack:
 services:
 	- NajaSlowStart\Application\Routing\RouterFactory
 	routing.router: @NajaSlowStart\Application\Routing\RouterFactory::create
+
+	@Nette\Bridges\ApplicationLatte\LatteFactory:
+		setup:
+			- addFilter(money, NajaSlowStart\Latte\Filters::formatMoney)
+
+	- NajaSlowStart\Application\UI\Components\AddToBasketButton\AddToBasketButtonComponentFactory
+	- NajaSlowStart\Application\UI\Components\BasketWidget\BasketWidgetComponentFactory
+	- NajaSlowStart\Application\UI\Components\Paging\PagingComponentFactory
+	- NajaSlowStart\Application\UI\Components\CategoryFilter\CategoryFilterComponentFactory
+
+	- NajaSlowStart\Domain\Basket\Basket
+	- NajaSlowStart\Domain\Catalog\ProductRepository
+	- NajaSlowStart\Domain\Catalog\CategoryRepository

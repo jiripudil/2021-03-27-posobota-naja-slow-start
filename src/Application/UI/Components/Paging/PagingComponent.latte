@@ -1,0 +1,12 @@
+<div class="pagination">
+    <ul>
+        <li n:for="$page = 1; $page <= $paginator->getLastPage(); $page++">
+            <a
+                    n:href="this page => $page"
+					n:tag-if="$page !== $paginator->getPage()"
+            >
+                {$page}
+            </a>
+        </li>
+    </ul>
+</div>

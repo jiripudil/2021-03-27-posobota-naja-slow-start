@@ -11,8 +11,13 @@ final class RouterFactory
 {
 	public function create(): Router
 	{
-		$router = new RouteList('Front');
-		$router->addRoute('<presenter>/<action>/<id>', 'Default:default');
+		$router = new RouteList();
+
+		$router->addRoute('products[/<categoryFilter-category \D+>][/<paging-page \d+>]', 'ProductList:default');
+		$router->addRoute('product[/<id \d+>]', 'ProductDetail:default');
+		$router->addRoute('basket', 'Basket:default');
+		$router->addRoute('/', 'ProductList:default', Router::ONE_WAY);
+
 		return $router;
 	}
 }

@@ -1,0 +1,26 @@
+{extends @layout.latte}
+
+{block title}Product Catalog{/block}
+{block content}
+<h1>Product Catalog</h1>
+
+<div class="catalog">
+	{control categoryFilter}
+
+	<div class="catalog-item" n:foreach="$products as $product">
+		<div class="catalog-item-image" >
+			<img src="{$product->getImageUrl()|nocheck}" alt="{$product->getName()}">
+		</div>
+		<div class="catalog-item-details">
+			<div class="catalog-item-details-name">
+				<a n:href="ProductDetail: id => $product->getId()">
+					{$product->getName()}
+				</a>
+			</div>
+			<div class="catalog-item-details-description">{$product->getDescription()}</div>
+			<div class="catalog-item-details-price">{$product->getPrice()|money}</div>
+		</div>
+	</div>
+
+	{control paging}
+</div>
