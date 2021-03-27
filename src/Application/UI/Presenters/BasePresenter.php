@@ -20,6 +20,8 @@ abstract class BasePresenter extends Presenter
 
 	protected function beforeRender(): void
 	{
+		\sleep(1);
+
 		parent::beforeRender();
 		$this->redrawControl('title');
 		$this->redrawControl('content');
