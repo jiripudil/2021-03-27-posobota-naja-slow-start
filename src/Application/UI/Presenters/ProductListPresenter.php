@@ -53,7 +53,8 @@ final class ProductListPresenter extends BasePresenter
 			// reset to page 1 after changing filter
 			$this['paging']->reset();
 
-			$this->redirect('this');
+			$this->payload->postGet = true;
+			$this->payload->url = $this->link('this');
 		};
 
 		return $component;
