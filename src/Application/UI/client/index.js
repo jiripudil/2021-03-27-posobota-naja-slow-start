@@ -17,16 +17,23 @@ class CategoryFilterExtension {
 }
 
 class SpinnerExtension {
+	constructor(selector) {
+		this.selector = selector;
+	}
+
 	initialize(naja) {
-		const mainContent = document.querySelector('.mainContent');
-		naja.addEventListener('start', () => mainContent.classList.add('spinner'));
-		naja.addEventListener('complete', () => mainContent.classList.remove('spinner'));
+		naja.uiHandler.addEventListener('interaction', (event) => {
+			event.detail.options.spinnerTarget = event.detail.element.closest(this.selector) ?? document.querySelector('.mainContent');
+		});
+
+		naja.addEventListener('start', (event) => event.detail.options.spinnerTarget?.classList.add('spinner'));
+		naja.addEventListener('complete', (event) => event.detail.options.spinnerTarget?.classList.remove('spinner'));
 	}
 }
 
 document.addEventListener('DOMContentLoaded', () => {
 	naja.uiHandler.selector = ':not([data-naja-off])';
 	naja.registerExtension(new CategoryFilterExtension());
-	naja.registerExtension(new SpinnerExtension());
+	naja.registerExtension(new SpinnerExtension('[data-spinner]'));
 	naja.initialize();
 });
