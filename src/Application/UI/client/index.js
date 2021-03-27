@@ -6,10 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	naja.uiHandler.selector = ':not([data-naja-off])';
 	naja.initialize();
 
-	const categoryFilter = document.querySelector('.categoryFilter select');
-	if (categoryFilter !== null) {
-		categoryFilter.addEventListener('change', (event) => {
+	const enableCategoryFilter = (element) => {
+		const categoryFilter = element.querySelector('.categoryFilter select');
+		categoryFilter?.addEventListener('change', (event) => {
 			naja.uiHandler.submitForm(event.target.form);
 		});
 	}
+
+	enableCategoryFilter(document);
+	naja.snippetHandler.addEventListener('afterUpdate', (event) => enableCategoryFilter(event.detail.snippet));
 });
